@@ -1,0 +1,20 @@
+/* Google font nunito sans imported (a good font for displaying text and numbers) */
+@import url("https://fonts.googleapis.com/css?family=Nunito+Sans");
+
+/* Body styling */
+body {
+    font-family: Nunito, sans-serif;    
+}
+
+/* Header class styling */
+.header {
+    text-align: center;
+    font-size: medium;
+    height: 175px;
+}
+
+/* Logo class styling */
+.logo {
+    height: 150px;
+    width: 150px;       
+}
