@@ -31,7 +31,7 @@ body {
 }
 
 /* Lottery area styling */
-.lottery-area {
+.lottery-section {
     background-color: #D3D3D3;
     box-sizing: border-box;
     width: 85%;
@@ -39,6 +39,29 @@ body {
     margin-left: auto;
     margin-right: auto;
     padding: 10px;
+}
+
+.btn-game {
+    width: 250px;
+    height: 50px;
+    display: inline-block;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 10px;
+    background-color: white;
+    border: 5px solid;
+}
+
+.btn-green {
+    color: green;
+}
+
+.btn-red {
+    color: red;
+}
+
+.btn-blue {
+    color: blue;
 }
 
 /* For medium screens sizes from 950px wide and down */
