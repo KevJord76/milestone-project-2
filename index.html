@@ -17,15 +17,29 @@
     </header>
 
     <!-- Lottery section content -->
-    <section class="lottery-section">
-        <h3 class="text-center">Random Numbers Generator</h3>
+    <section class="lottery-section text-center">
+        <h3>Random Numbers Generator</h3>
 
         <!-- Choose a lottery game to play -->
-        <div class="choose-game text-center">
-            <button type="button" class="btn-game btn-green">Euromillions</button>
-            <button type="button" class="btn-game btn-red">Lotto</button>
-            <button type="button" class="btn-game btn-blue">Dailymillions</button>
+        <div class="choose-game">
+            <button type="button" class="btn-game btn-euromillions">Euromillions</button>
+            <button type="button" class="btn-game btn-lotto">Lotto</button>
+            <button type="button" class="btn-game btn-dailymillions">Dailymillions</button>            
         </div>
+        
+        <!-- An image of picking numbers is displayed -->
+        <img class="logo" src="assets/images/pick-numbers.webp" alt="pick numbers">
+
+        <!-- Lottery game criteria -->
+        <div>  
+            <label for="plus">Plus</label>         
+            <input type="checkbox" id="plus" name="plus" value="Plus" checked>           
+            <label for="number-lines">Number of Lines</label>
+            <input id="number-lines" type="number">
+            <label for="number-members">Number of Members</label>
+            <input id="number-members" type="number">            
+        </div>
+        
     </section>
 
     <!-- Link to external javascript script file -->

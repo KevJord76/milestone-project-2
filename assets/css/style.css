@@ -35,12 +35,13 @@ body {
     background-color: #D3D3D3;
     box-sizing: border-box;
     width: 85%;
-    height: 60vh;   
+    height: 70vh;   
     margin-left: auto;
     margin-right: auto;
     padding: 10px;
 }
 
+/* Lottery game buttons styling */
 .btn-game {
     width: 250px;
     height: 50px;
@@ -52,15 +53,18 @@ body {
     border: 5px solid;
 }
 
-.btn-green {
+/* Euromillions button styling */
+.btn-euromillions {
     color: green;
 }
 
-.btn-red {
+/* Lotto button styling */
+.btn-lotto {
     color: red;
 }
 
-.btn-blue {
+/* Dailymillions button styling */
+.btn-dailymillions {
     color: blue;
 }
 
