@@ -1,5 +1,12 @@
-/* Google font nunito sans imported (a good font for displaying text and numbers) */
+/* Google font Nunito Sans imported (a good font for displaying text and numbers) */
 @import url("https://fonts.googleapis.com/css?family=Nunito+Sans");
+
+/* Remove all of the margins, paddings and borders  */
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
 
 /* Body styling */
 body {
@@ -8,13 +15,46 @@ body {
 
 /* Header class styling */
 .header {
+    height: 20vh;
+    padding: 10px;   
+}
+
+/* Align the text in the center of the screen */
+.text-center {
     text-align: center;
-    font-size: medium;
-    height: 175px;
 }
 
 /* Logo class styling */
 .logo {
-    height: 150px;
-    width: 150px;       
+    height: 100px;
+    width: 100px;       
+}
+
+/* Lottery area styling */
+.lottery-area {
+    background-color: #D3D3D3;
+    box-sizing: border-box;
+    width: 85%;
+    height: 60vh;   
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+}
+
+/* For medium screens sizes from 950px wide and down */
+@media screen and (max-width: 950px) {
+
+     /* Body text styling, 80% size of original */
+     body {
+        font-size: 80%;
+    }  
+}
+
+/* For small screens sizes from 800px wide and down */
+@media screen and (max-width: 800px) {
+
+     /* Body text styling, 70% size of original */
+     body {
+        font-size: 70%;
+    }
 }
