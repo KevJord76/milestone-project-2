@@ -79,6 +79,7 @@ body {
     height: 30px;
     width: 50px;
     font-size: 1.3rem;
+    text-align: right;
 }
 
 /* Generate random numbers button styling: default to euromillions colour green */
