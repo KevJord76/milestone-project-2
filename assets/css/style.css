@@ -68,6 +68,19 @@ body {
     color: blue;
 }
 
+/* Lottery criteria styling */
+.lottery-criteria {
+    font-weight: bold;
+}
+
+/* Lottery criteria check and input boxes styling */
+.box-criteria {
+    border: 2px solid black;
+    height: 30px;
+    width: 50px;
+    font-size: 1.3rem;
+}
+
 /* For medium screens sizes from 950px wide and down */
 @media screen and (max-width: 950px) {
 

@@ -18,7 +18,7 @@
 
     <!-- Lottery section content -->
     <section class="lottery-section text-center">
-        <h3>Random Numbers Generator</h3>
+        <h3>Random Numbers Generator - Select Game</h3>
 
         <!-- Choose a lottery game to play -->
         <div class="choose-game">
@@ -28,18 +28,27 @@
         </div>
         
         <!-- An image of picking numbers is displayed -->
-        <img class="logo" src="assets/images/pick-numbers.webp" alt="pick numbers">
+        <img class="logo" src="assets/images/pick-numbers.webp" alt="pick numbers image">
 
         <!-- Lottery game criteria -->
-        <div>  
-            <label for="plus">Plus</label>         
-            <input type="checkbox" id="plus" name="plus" value="Plus" checked>           
-            <label for="number-lines">Number of Lines</label>
-            <input id="number-lines" type="number">
-            <label for="number-members">Number of Members</label>
-            <input id="number-members" type="number">            
-        </div>
-        
+        <div class="lottery-criteria">             
+            <h3>Please Select/Enter Lottery Options below:</h3>
+            <br>
+            
+            <!-- Lottery plus criteria -->
+            <p>Include Plus Draws</p>
+            <input class="box-criteria" id="plus" name="plus" type="checkbox" value="Plus" checked>           
+            <br><br>
+
+            <!-- Lottery number of lines criteria -->
+            <p>Number of Lines</p>
+            <input class="box-criteria" id="number-lines" type="number">
+            <br><br>
+
+            <!-- Lottery number of members criteria -->
+            <p>Number of Members</p>
+            <input class="box-criteria" id="number-members" type="number">                   
+        </div>        
     </section>
 
     <!-- Link to external javascript script file -->
