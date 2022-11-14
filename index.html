@@ -18,13 +18,13 @@
 
     <!-- Lottery section content -->
     <section class="lottery-section text-center">
-        <h3>Random Numbers Generator - Select Game</h3>
+        <h3>Random Numbers Generator - Select Game:</h3>
 
         <!-- Choose a lottery game to play -->
         <div class="choose-game">
-            <button type="button" class="btn-game btn-euromillions">Euromillions</button>
-            <button type="button" class="btn-game btn-lotto">Lotto</button>
-            <button type="button" class="btn-game btn-dailymillions">Dailymillions</button>            
+            <button data-type="euromillions" type="button" class="btn-game btn-euromillions">Euromillions</button>
+            <button data-type="lotto" type="button" class="btn-game btn-lotto">Lotto</button>
+            <button data-type="dailymillions" type="button" class="btn-game btn-dailymillions">Dailymillions</button>            
         </div>
         
         <!-- An image of picking numbers is displayed -->
@@ -32,7 +32,7 @@
 
         <!-- Lottery game criteria -->
         <div class="lottery-criteria">             
-            <h3>Please Select/Enter Lottery Options below:</h3>
+            <h3>Select/Enter Lottery Draw Options:</h3>
             <br>
             
             <!-- Lottery plus criteria -->
@@ -53,7 +53,7 @@
         
         <div>
             <!-- Generate lottery random numbers: default to euromillions game -->
-            <button type="button" class="btn-game btn-generate">Generate Euromillions Numbers</button> 
+            <button data-type="generate" type="button" class="btn-game btn-generate">Generate Euromillions Numbers</button> 
         </div>        
     </section>
 
