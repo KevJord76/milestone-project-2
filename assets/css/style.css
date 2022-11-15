@@ -15,7 +15,7 @@ body {
 
 /* Header class styling */
 .header {
-    height: 19vh;
+    height: 9vh;
     padding: 10px;
 }
 
@@ -24,20 +24,27 @@ body {
     text-align: center;
 }
 
-/* Logo class styling */
+/* Logo image class styling */
 .logo {
+    height: 50px;
+    width: 50px;
+    float: inline-end;
+}
+
+/* Pick numbers image class styling */
+.pick-numbers {
     height: 100px;
     width: 100px;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 /* Lottery area styling */
 .lottery-section {
     background-color: #D3D3D3;
     box-sizing: border-box;
-    width: 85%;
-    height: 76vh;
-    margin-left: auto;
-    margin-right: auto;
+    width: 100%;
+    height: 80vh;
     padding: 10px;
 }
 
@@ -85,6 +92,20 @@ body {
 /* Generate random numbers button styling: default to euromillions colour green */
 .btn-generate {
     color: green;
+}
+
+/* Footer styling */
+footer {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: black;
+    color: white;
 }
 
 /* For medium screens sizes from 950px wide and down */
