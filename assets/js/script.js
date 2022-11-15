@@ -1,4 +1,4 @@
-// Wait for the DOM to finish loading before running the lottery game  
+// Wait for the DOM to finish loading  
 // Get the button elements and add event listeners to them
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -17,15 +17,30 @@ document.addEventListener("DOMContentLoaded", function () {
 })
 
 /**
- * This function generates the random lottery numbers
+ * Sets the text of the generate button to the lottery game chosen and sets the button colour as follows:
+ * green for euromillions, red for lotto and blue for dailymillions 
  */
-function generateNumbers() {
-   
+function lotteryGame(lotteryType) {
+
+    // Set the generate numbers button text
+    document.getElementById("generate-numbers").innerText = `Generate ${lotteryType} Numbers`;
+
+    // Set the generate numbers button colour
+    if (lotteryType === "euromillions") {
+        document.getElementById("generate-numbers").style.color = '#008000'; // green
+    } else if (lotteryType === "lotto") {
+        document.getElementById("generate-numbers").style.color = '#FF0000'; // red
+    } else if (lotteryType === "dailymillions") {
+        document.getElementById("generate-numbers").style.color = '#0000FF'; // blue
+    } else {
+        alert(`Unknown lottery game type: ${lotteryType}`)
+        throw `Unknown lottery game type: ${lotteryType}. Aborting!`;
+    }
 }
 
 /**
- * This function checks the lottery game type chosen
+ * This function generates the random lottery numbers
  */
-function lotteryGame(lotteryType) {
-    
+function generateNumbers() {
+
 }
