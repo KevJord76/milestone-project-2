@@ -10,13 +10,13 @@
 
 /* Body styling */
 body {
-    font-family: Nunito, sans-serif;    
+    font-family: Nunito, sans-serif;
 }
 
 /* Header class styling */
 .header {
     height: 19vh;
-    padding: 10px;   
+    padding: 10px;
 }
 
 /* Align the text in the center of the screen */
@@ -27,7 +27,7 @@ body {
 /* Logo class styling */
 .logo {
     height: 100px;
-    width: 100px;       
+    width: 100px;
 }
 
 /* Lottery area styling */
@@ -35,7 +35,7 @@ body {
     background-color: #D3D3D3;
     box-sizing: border-box;
     width: 85%;
-    height: 76vh;   
+    height: 76vh;
     margin-left: auto;
     margin-right: auto;
     padding: 10px;
@@ -90,17 +90,17 @@ body {
 /* For medium screens sizes from 950px wide and down */
 @media screen and (max-width: 950px) {
 
-     /* Body text styling, 80% size of original */
-     body {
+    /* Body text styling, 80% size of original */
+    body {
         font-size: 80%;
-    }  
+    }
 }
 
 /* For small screens sizes from 800px wide and down */
 @media screen and (max-width: 800px) {
 
-     /* Body text styling, 70% size of original */
-     body {
+    /* Body text styling, 70% size of original */
+    body {
         font-size: 70%;
     }
 }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,11 +10,12 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Lottery Syndicate</title>
 </head>
+
 <body>
     <!-- Header content -->
     <header class="header text-center">
-        <h2>Lottery Syndicate</h2>        
-        <img class="logo" src="assets/images/logo.webp" alt="logo">                 
+        <h2>Lottery Syndicate</h2>
+        <img class="logo" src="assets/images/logo.webp" alt="logo">
     </header>
 
     <!-- Lottery section content -->
@@ -24,20 +26,20 @@
         <div class="choose-game">
             <button data-type="euromillions" type="button" class="btn-game btn-euromillions">Euromillions</button>
             <button data-type="lotto" type="button" class="btn-game btn-lotto">Lotto</button>
-            <button data-type="dailymillions" type="button" class="btn-game btn-dailymillions">Dailymillions</button>            
+            <button data-type="dailymillions" type="button" class="btn-game btn-dailymillions">Dailymillions</button>
         </div>
-        
+
         <!-- An image of picking numbers is displayed -->
         <img class="logo" src="assets/images/pick-numbers.webp" alt="pick numbers image">
 
         <!-- Lottery game criteria -->
-        <div class="lottery-criteria">             
+        <div class="lottery-criteria">
             <h3>Select/Enter Lottery Draw Options:</h3>
             <br>
-            
+
             <!-- Lottery plus criteria -->
             <p>Include Plus Draws</p>
-            <input class="box-criteria" id="plus" name="plus" type="checkbox" value="Plus" checked>           
+            <input class="box-criteria" id="plus" name="plus" type="checkbox" value="Plus" checked>
             <br>
 
             <!-- Lottery number of lines criteria -->
@@ -47,17 +49,19 @@
 
             <!-- Lottery number of members criteria -->
             <p>Number of Members</p>
-            <input class="box-criteria" id="number-members" type="number" value=1 min=1>   
-            <br><br>                
-        </div>   
-        
+            <input class="box-criteria" id="number-members" type="number" value=1 min=1>
+            <br><br>
+        </div>
+
         <div>
             <!-- Generate lottery random numbers: default to euromillions game -->
-            <button data-type="generate" type="button" class="btn-game btn-generate">Generate Euromillions Numbers</button> 
-        </div>        
+            <button data-type="generate" type="button" class="btn-game btn-generate">Generate Euromillions
+                Numbers</button>
+        </div>
     </section>
 
     <!-- Link to external javascript script file -->
     <script src="assets/js/script.js"></script>
 </body>
+
 </html>
