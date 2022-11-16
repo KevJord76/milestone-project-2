@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     for (let button of buttons) {
         button.addEventListener("click", function () {
             if (this.getAttribute("data-type") === "generate") {
-                generateNumbers();
+                checkGame();
             } else {
                 let lotteryType = this.getAttribute("data-type");
                 lotteryGame(lotteryType);
@@ -24,18 +24,18 @@ document.addEventListener("DOMContentLoaded", function () {
 function lotteryGame(lotteryType) {
 
     // Set the generate numbers button text
-    document.getElementById("generate-numbers").innerText = `Generate ${lotteryType} Numbers`;
+    document.getElementById("generate").innerText = `Generate ${lotteryType} Numbers`;
 
     // Set the generate numbers button colour
     if (lotteryType === "euromillions") {
-        document.getElementById("generate-numbers").style.color = '#008000'; // green
-        document.getElementById("number-lines").value = "1";
+        document.getElementById("generate").style.color = '#008000'; // green
+        document.getElementById("num-lines").value = "1";
     } else if (lotteryType === "lotto") {
-        document.getElementById("generate-numbers").style.color = '#FF0000'; // red
-        document.getElementById("number-lines").value = "2"; // mimimum of 2 lines
+        document.getElementById("generate").style.color = '#FF0000'; // red
+        document.getElementById("num-lines").value = "2"; // mimimum of 2 lines
     } else if (lotteryType === "dailymillions") {
-        document.getElementById("generate-numbers").style.color = '#0000FF'; // blue
-        document.getElementById("number-lines").value = "1";
+        document.getElementById("generate").style.color = '#0000FF'; // blue
+        document.getElementById("num-lines").value = "1";
     } else {
         alert(`Unknown lottery game type: ${lotteryType}`)
         throw `Unknown lottery game type: ${lotteryType}. Aborting!`;
@@ -43,8 +43,51 @@ function lotteryGame(lotteryType) {
 }
 
 /**
- * This function generates the random lottery numbers
- */
-function generateNumbers() {
+ * Check which lottery game the user has chosen, then define the game rules:  
+ * Total number of lottery balls in the draw, number to be chosen and are lucky stars included    
+  */
+function checkGame() {
+
+    // Store the text of the chosen lottery game
+    let checkGame = document.getElementById("generate").innerText;
+    
+    // Default to Euromillions: 50 numbers in total, 5 numbers to be generated, lucky stars included
+    let totalNumbers = 50;
+    let chosenNumbers = 5;
+    let luckyStars = true;
+
+    // Check what the chosen lottery game is
+    if (checkGame.includes("EUROMILLIONS")) {
+        totalNumbers = 50;
+        chosenNumbers = 5;
+        luckyStars = true;
+    } else if (checkGame.includes("LOTTO")) {
+        totalNumbers = 47;
+        chosenNumbers = 6;
+        luckyStars = false;
+    } else if (checkGame.includes("DAILYMILLIONS")) {
+        totalNumbers = 39;
+        chosenNumbers = 6;
+        luckyStars = false;
+    } else {
+        alert("Unknown lottery game type");
+        throw "Unknown lottery game type";
+    }
+
+    // Generte the random lottery numbers
+    generateNumbers(totalNumbers, chosenNumbers, luckyStars);    
 
 }
+
+/**
+ * This function generates the random lottery numbers
+ */
+function generateNumbers(totalNumbers, chosenNumbers, luckyStars) {
+
+    // Store the number of lines and the number of members
+    let numLines = parseInt(document.getElementById("num-lines").value);
+    let numMembers = parseInt(document.getElementById("num-members").value);
+
+    alert(totalNumbers+" "+chosenNumbers+" "+luckyStars);
+
+}     
