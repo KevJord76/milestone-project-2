@@ -92,20 +92,27 @@ function generateNumbers(totalNumbers, chosenNumbers, luckyStars) {
     // Array of lottery game random numbers
     let randomNumbers = [];
 
-    // Continue until there is a full set of numbers for the game
-    do {
-        // Creates a random number between 1 and total number in the lottery game
-        let num = Math.floor(Math.random() * totalNumbers) + 1;
+    // Loop for the number of lines chosen
+    for (let i = 0; i < numLines; i++) {
 
-        // Only store unique numbers
-        if (!randomNumbers.includes(num)) {
-            // Add to the array
-            randomNumbers.push(num);
-        }
-            
-    } while (randomNumbers.length <  chosenNumbers);
+        // Reset to empty
+        randomNumbers = [];
+
+        // Continue until there is a full set of numbers for the game
+        do {
+            // Creates a random number between 1 and total number in the lottery game
+            let num = Math.floor(Math.random() * totalNumbers) + 1;
+
+            // Only store unique numbers
+            if (!randomNumbers.includes(num)) {
+                // Add to the array
+                randomNumbers.push(num);
+            }
+                
+        } while (randomNumbers.length <  chosenNumbers);
         
-    // numeric sort function discovered on www.w3schools.com 
-    randomNumbers.sort(function(a, b){return a-b});
-    alert(randomNumbers);
+        // numeric sort function discovered on www.w3schools.com 
+        randomNumbers.sort(function(a, b){return a-b});
+        alert(randomNumbers);
+    }
 }     
