@@ -92,11 +92,15 @@ function generateNumbers(totalNumbers, chosenNumbers, luckyStars) {
     // Array of lottery game random numbers
     let randomNumbers = [];
 
+    // Array of euromillions lucky stars random numbers
+    let luckystarsNumbers = [];
+
     // Loop for the number of lines chosen
     for (let i = 0; i < numLines; i++) {
 
         // Reset to empty
         randomNumbers = [];
+        luckystarsNumbers = []
 
         // Continue until there is a full set of numbers for the game
         do {
@@ -110,9 +114,27 @@ function generateNumbers(totalNumbers, chosenNumbers, luckyStars) {
             }
                 
         } while (randomNumbers.length <  chosenNumbers);
-        
+
+        // Only done for euromillions game
+        if (luckyStars) {
+            // Continue until there is a full set of numbers for the lucky stars array
+            do {
+                // Creates a random number between 1 and 12
+                let num1 = Math.floor(Math.random() * 12) + 1;
+
+                // Only store unique numbers
+                if (!luckystarsNumbers.includes(num1)) {
+                    // Add to the array
+                    luckystarsNumbers.push(num1);
+                }
+                
+            } while (luckystarsNumbers.length <  2);
+        }
+      
         // numeric sort function discovered on www.w3schools.com 
         randomNumbers.sort(function(a, b){return a-b});
-        alert(randomNumbers);
+        luckystarsNumbers.sort(function(a, b){return a-b});
+        alert("Main Game: " + randomNumbers);
+        alert("Lucky Stars: " + luckystarsNumbers);
     }
 }     
