@@ -33,13 +33,19 @@ function lotteryGame(lotteryType) {
     // Set the generate numbers button colour
     if (lotteryType === "euromillions") {
         document.getElementById("generate").style.color = '#008000'; // green
+        document.getElementById("plus").checked = true;
         document.getElementById("num-lines").value = "1";
+        document.getElementById("num-members").value = "1";
     } else if (lotteryType === "lotto") {
         document.getElementById("generate").style.color = '#FF0000'; // red
+        document.getElementById("plus").checked = true;
         document.getElementById("num-lines").value = "2"; // mimimum of 2 lines
+        document.getElementById("num-members").value = "1";
     } else if (lotteryType === "dailymillions") {
         document.getElementById("generate").style.color = '#0000FF'; // blue
+        document.getElementById("plus").checked = true;
         document.getElementById("num-lines").value = "1";
+        document.getElementById("num-members").value = "1";
     } else {
         alert(`Unknown lottery game type: ${lotteryType}`)
         throw `Unknown lottery game type: ${lotteryType}. Aborting!`;
@@ -90,8 +96,11 @@ function checkGame() {
  */
 function generateNumbers(chosenGame, totalNumbers, chosenNumbers, luckyStars) {
 
-    // Store the number of lines chosen
+    // Store the number of lines entered
     let numLines = parseInt(document.getElementById("num-lines").value);
+
+    // Store the number of members entered
+    let numMembers = parseInt(document.getElementById("num-members").value);
 
     // Array of lottery game random numbers
     let randomNumbers = [];
@@ -161,6 +170,7 @@ function generateNumbers(chosenGame, totalNumbers, chosenNumbers, luckyStars) {
 
     // Set the costs to zero
     let totCost = 0
+    let costPerMember = 0
    
     // Calculate the total cost
     includePlus = document.getElementById("plus").checked
@@ -184,9 +194,12 @@ function generateNumbers(chosenGame, totalNumbers, chosenNumbers, luckyStars) {
 
     // Set to 2 decimal places
     totCost = (totCost).toFixed(2);
+    costPerMember = totCost / numMembers;
+    costPerMember = (costPerMember).toFixed(2);
     
     // Display the total cost
-    htmlResult += `The total cost is €: ${totCost}`    
+    htmlResult += `The total cost is €${totCost}  `
+    htmlResult += `(cost per member is €${costPerMember})`
 
      // Set the results div to the required text
      document.getElementById("results").innerHTML = htmlResult;
