@@ -33,10 +33,10 @@
         </div>
 
         <!-- An image of picking numbers is displayed -->
-        <img class="pick-num-image" src="assets/images/pick-numbers.webp" alt="pick numbers image">
+        <img class="pick-num-image" src="assets/images/pick-numbers.webp" alt="pick numbers image" id="pick-num-image">
 
         <!-- Lottery game criteria -->
-        <div class="lottery-criteria">
+        <div class="lottery-criteria" id="lottery-criteria">
             <h3>Select/Enter Lottery Draw Options:</h3>
             <br>
 
@@ -56,8 +56,12 @@
             <br><br>
         </div>
 
+        <!-- Display lottery game random numbers results -->
+        <div id="results" class="results">
+        </div>
+
+        <!-- Generate lottery random numbers: default to euromillions game -->
         <div>
-            <!-- Generate lottery random numbers: default to euromillions game -->
             <button data-type="generate" type="button" class="btn-game btn-generate" id="generate">Generate
                 Euromillions
                 Numbers</button>

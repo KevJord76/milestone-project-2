@@ -1,6 +1,5 @@
 // Wait for the DOM to finish loading  
 // Get the button elements and add event listeners to them
-
 document.addEventListener("DOMContentLoaded", function () {
     let buttons = document.getElementsByTagName("button");
 
@@ -22,6 +21,11 @@ document.addEventListener("DOMContentLoaded", function () {
  * Sets the minimun number of lines per game, e.g. the lotto game requires a minimum of 2 lines  
  */
 function lotteryGame(lotteryType) {
+
+    // Make sure the requirements elements are displayed or not displayed
+    document.getElementById("lottery-criteria").style.display = "initial";
+    document.getElementById("pick-num-image").style.display = "initial";
+    document.getElementById("results").style.display = "none";
 
     // Set the generate numbers button text
     document.getElementById("generate").innerText = `Generate ${lotteryType} Numbers`;
@@ -51,7 +55,7 @@ function checkGame() {
 
     // Store the text of the chosen lottery game
     let chosenGame = document.getElementById("generate").innerText;
-    
+
     // Default to Euromillions: 50 numbers in total, 5 numbers to be generated, lucky stars included
     let totalNumbers = 50;
     let chosenNumbers = 5;
@@ -76,7 +80,7 @@ function checkGame() {
     }
 
     // Generte the random lottery numbers
-    generateNumbers(totalNumbers, chosenNumbers, luckyStars);
+    generateNumbers(chosenGame, totalNumbers, chosenNumbers, luckyStars);
 }
 
 /**
@@ -84,27 +88,30 @@ function checkGame() {
  * on the total number of lottery balls in the draw, 
  * number of balls to be chosen and are lucky stars included 
  */
-function generateNumbers(totalNumbers, chosenNumbers, luckyStars) {
+function generateNumbers(chosenGame, totalNumbers, chosenNumbers, luckyStars) {
 
     // Store the number of lines chosen
     let numLines = parseInt(document.getElementById("num-lines").value);
-    
+
     // Array of lottery game random numbers
     let randomNumbers = [];
 
     // Array of euromillions lucky stars random numbers
     let luckystarsNumbers = [];
 
+    // Output text of lottery game random numbers header and lines...
+    let htmlResult = "<br><br>RANDOM " + chosenGame.substr(9) + " RESULT<br><br>";
+
     // Loop for the number of lines chosen
     for (let i = 0; i < numLines; i++) {
 
         // Reset to empty
         randomNumbers = [];
-        luckystarsNumbers = []
+        luckystarsNumbers = [];
 
         // Continue until there is a full set of numbers for the game
         do {
-            // Creates a random number between 1 and total number in the lottery game
+            // Creates a random number between 1 and the total number in the lottery game
             let num = Math.floor(Math.random() * totalNumbers) + 1;
 
             // Only store unique numbers
@@ -112,8 +119,8 @@ function generateNumbers(totalNumbers, chosenNumbers, luckyStars) {
                 // Add to the array
                 randomNumbers.push(num);
             }
-                
-        } while (randomNumbers.length <  chosenNumbers);
+
+        } while (randomNumbers.length < chosenNumbers);
 
         // Only done for euromillions game
         if (luckyStars) {
@@ -127,14 +134,33 @@ function generateNumbers(totalNumbers, chosenNumbers, luckyStars) {
                     // Add to the array
                     luckystarsNumbers.push(num1);
                 }
-                
-            } while (luckystarsNumbers.length <  2);
+
+            } while (luckystarsNumbers.length < 2);
         }
-      
-        // numeric sort function discovered on www.w3schools.com 
-        randomNumbers.sort(function(a, b){return a-b});
-        luckystarsNumbers.sort(function(a, b){return a-b});
-        alert("Main Game: " + randomNumbers);
-        alert("Lucky Stars: " + luckystarsNumbers);
+
+        // Numeric sort function discovered on www.w3schools.com 
+        randomNumbers.sort(function (a, b) {
+            return a - b
+        });
+        luckystarsNumbers.sort(function (a, b) {
+            return a - b
+        });
+
+
+        // Lucky stars are only included in the euromillions lottery game
+        if (luckyStars) {
+            htmlResult += `Line No.${i+1}:  (${randomNumbers}) Lucky Stars: (${luckystarsNumbers}) <br><br>`;
+        } else {
+            htmlResult += `Line No.${i+1}:  (${randomNumbers}) <br><br>`;
+        }
     }
-}     
+
+    // Make sure the requirements elements are displayed or not displayed
+    document.getElementById("lottery-criteria").style.display = "none";
+    document.getElementById("pick-num-image").style.display = "none";
+    document.getElementById("results").style.display = "block";
+
+    // Set the results div to the required text
+    document.getElementById("results").innerHTML = htmlResult;
+
+}

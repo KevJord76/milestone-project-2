@@ -108,6 +108,13 @@ footer {
     color: white;
 }
 
+/* Results div styling */
+.results {
+    display: none;
+    height: 348px;
+    font-weight: bolder;
+}
+
 /* For medium screens sizes from 950px wide and down */
 @media screen and (max-width: 950px) {
 
