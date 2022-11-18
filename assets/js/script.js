@@ -146,7 +146,6 @@ function generateNumbers(chosenGame, totalNumbers, chosenNumbers, luckyStars) {
             return a - b
         });
 
-
         // Lucky stars are only included in the euromillions lottery game
         if (luckyStars) {
             htmlResult += `Line No.${i+1}:  (${randomNumbers}) Lucky Stars: (${luckystarsNumbers}) <br><br>`;
@@ -160,7 +159,36 @@ function generateNumbers(chosenGame, totalNumbers, chosenNumbers, luckyStars) {
     document.getElementById("pick-num-image").style.display = "none";
     document.getElementById("results").style.display = "block";
 
-    // Set the results div to the required text
-    document.getElementById("results").innerHTML = htmlResult;
+    // Set the costs to zero
+    let totCost = 0
+   
+    // Calculate the total cost
+    includePlus = document.getElementById("plus").checked
+    if (includePlus) {
+        if (chosenGame.includes("EUROMILLIONS")) {
+            totCost = numLines * 3.50;
+        } else if (chosenGame.includes("LOTTO")) {
+            totCost = numLines * 3.00;
+        } else if (chosenGame.includes("DAILYMILLIONS")) {
+            totCost = numLines * 1.50;
+        }
+    } else {
+        if (chosenGame.includes("EUROMILLIONS")) {
+            totCost = numLines * 2.50;
+        } else if (chosenGame.includes("LOTTO")) {
+            totCost = numLines * 2.00;
+        } else if (chosenGame.includes("DAILYMILLIONS")) {
+            totCost = numLines * 1.00;
+        }
+    }
+
+    // Set to 2 decimal places
+    totCost = (totCost).toFixed(2);
+    
+    // Display the total cost
+    htmlResult += `The total cost is €: ${totCost}`    
+
+     // Set the results div to the required text
+     document.getElementById("results").innerHTML = htmlResult;
 
 }
