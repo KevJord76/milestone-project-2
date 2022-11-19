@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
  */
 function lotteryGame(lotteryType) {
 
-    // Make sure the requirements elements are displayed or not displayed
+    // Make sure the required elements are displayed or not displayed
     document.getElementById("lottery-criteria").style.display = "initial";
     document.getElementById("pick-num-image").style.display = "initial";
     document.getElementById("results").style.display = "none";
@@ -30,7 +30,7 @@ function lotteryGame(lotteryType) {
     // Set the generate numbers button text
     document.getElementById("generate").innerText = `Generate ${lotteryType} Numbers`;
 
-    // Set the generate numbers button colour
+    // Set the required elements to their default values
     if (lotteryType === "euromillions") {
         document.getElementById("generate").style.color = '#008000'; // green
         document.getElementById("plus").checked = true;
@@ -102,14 +102,45 @@ function generateNumbers(chosenGame, totalNumbers, chosenNumbers, luckyStars) {
     // Store the number of members entered
     let numMembers = parseInt(document.getElementById("num-members").value);
 
+    // Store the plus option chosen
+    let includePlus = document.getElementById("plus").checked
+
     // Array of lottery game random numbers
     let randomNumbers = [];
 
     // Array of euromillions lucky stars random numbers
     let luckystarsNumbers = [];
 
-    // Output text of lottery game random numbers header and lines...
-    let htmlResult = "<br><br>RANDOM " + chosenGame.substr(9) + " RESULT<br><br>";
+    // Output text of lottery game random numbers header, each line and totals...
+    let htmlResult = ""
+
+    // Check the game chosen
+    if (chosenGame.includes("EUROMILLIONS")) {
+        if (numLines === 1) {
+            htmlResult = `<br>(${chosenGame.substr(9)} GENERATED) - ${numLines} line of 5 Numbers (1-50) 2 Lucky Stars (1-12)`;
+        } else {
+            htmlResult = `<br>(${chosenGame.substr(9)} GENERATED) - ${numLines} lines of 5 Numbers (1-50) 2 Lucky Stars (1-12)`;
+        }
+    } else if (chosenGame.includes("LOTTO")) {
+        if (numLines === 1) {
+            htmlResult = `<br>(${chosenGame.substr(9)} GENERATED) - ${numLines} line of 6 Numbers (1-47)`;
+        } else {
+            htmlResult = `<br>(${chosenGame.substr(9)} GENERATED) - ${numLines} lines of 6 Numbers (1-47)`;
+        }
+    } else if (chosenGame.includes("DAILYMILLIONS")) {
+        if (numLines === 1) {
+            htmlResult = `<br>(${chosenGame.substr(9)} GENERATED) - ${numLines} line of 6 Numbers (1-39)`;
+        } else {
+            htmlResult = `<br>(${chosenGame.substr(9)} GENERATED) - ${numLines} lines of 6 Numbers (1-39)`;
+        }
+    }
+
+    // Is the lottery game plus option included
+    if (includePlus) {
+        htmlResult += " (Plus Included)<br><br>"
+    } else {
+        htmlResult += " (No Plus Included)<br><br>"
+    }
 
     // Loop for the number of lines chosen
     for (let i = 0; i < numLines; i++) {
@@ -171,37 +202,60 @@ function generateNumbers(chosenGame, totalNumbers, chosenNumbers, luckyStars) {
     // Set the costs to zero
     let totCost = 0
     let costPerMember = 0
-   
+    let costPerLine = 0
+
     // Calculate the total cost
-    includePlus = document.getElementById("plus").checked
     if (includePlus) {
         if (chosenGame.includes("EUROMILLIONS")) {
             totCost = numLines * 3.50;
+            costPerLine = 3.50
         } else if (chosenGame.includes("LOTTO")) {
             totCost = numLines * 3.00;
+            costPerLine = 3.00
         } else if (chosenGame.includes("DAILYMILLIONS")) {
             totCost = numLines * 1.50;
+            costPerLine = 1.50
         }
     } else {
         if (chosenGame.includes("EUROMILLIONS")) {
             totCost = numLines * 2.50;
+            costPerLine = 2.50
         } else if (chosenGame.includes("LOTTO")) {
             totCost = numLines * 2.00;
+            costPerLine = 2.00
         } else if (chosenGame.includes("DAILYMILLIONS")) {
             totCost = numLines * 1.00;
+            costPerLine = 1.00
         }
     }
 
     // Set to 2 decimal places
     totCost = (totCost).toFixed(2);
+    costPerLine = (costPerLine).toFixed(2);
     costPerMember = totCost / numMembers;
-    costPerMember = (costPerMember).toFixed(2);
-    
+    costPerMember = parseFloat(costPerMember).toFixed(2);
+
     // Display the total cost
     htmlResult += `The total cost is €${totCost}  `
-    htmlResult += `(cost per member is €${costPerMember})`
 
-     // Set the results div to the required text
-     document.getElementById("results").innerHTML = htmlResult;
+    // Check the number of lines entered
+    if (numLines === 1) {
+        htmlResult += `(${numLines} line @${costPerLine} per line)`
+    } else {
+        htmlResult += `(${numLines} lines @${costPerLine} per line)`
+    }
+
+    // Display the cost per member
+    htmlResult += `<br>The cost per member is €${costPerMember}`
+
+    // Check the number of members entered
+    if (numMembers === 1) {
+        htmlResult += ` (${numMembers} member)`
+    } else {
+        htmlResult += ` (${numMembers} members)`
+    }
+
+    // Set the results div to the required text
+    document.getElementById("results").innerHTML = htmlResult;
 
 }
