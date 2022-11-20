@@ -63,16 +63,40 @@ body {
 /* Euromillions button styling */
 .btn-euromillions {
     color: green;
+    border-color: green;
+}
+
+/* Euromillions button active, hover styling */
+.btn-euromillions:active,
+.btn-euromillions:hover {
+    background-color: darkgreen;
+    color: white;
 }
 
 /* Lotto button styling */
 .btn-lotto {
     color: red;
+    border-color: red;
+}
+
+/* Lotto button active, hover styling */
+.btn-lotto:active,
+.btn-lotto:hover {
+    background-color: darkred;
+    color: white;
 }
 
 /* Dailymillions button styling */
 .btn-dailymillions {
     color: blue;
+    border-color: blue;
+}
+
+/* Dailymillions button active, hover styling */
+.btn-dailymillions:active,
+.btn-dailymillions:hover {
+    background-color: darkblue;
+    color: white;
 }
 
 /* Lottery criteria styling */
@@ -91,7 +115,15 @@ body {
 
 /* Generate random numbers button styling: default to euromillions colour green */
 .btn-generate {
-    color: green;
+    background-color: #445361;
+    border-color: black;
+    color: white;
+}
+
+/* Generate button active, hover styling */
+.btn-generate:active,
+.btn-generate:hover {
+    background-color: #0d1013;
 }
 
 /* Footer styling */

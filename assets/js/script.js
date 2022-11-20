@@ -16,33 +16,26 @@ document.addEventListener("DOMContentLoaded", function () {
 })
 
 /**
- * Sets the text of the generate numbers button to the lottery game chosen and sets the button colour  
- * as follows: green for euromillions, red for lotto and blue for dailymillions
- * Sets the minimun number of lines per game, e.g. the lotto game requires a minimum of 2 lines  
+ * Sets the text of the generate numbers button to the lottery game chosen  
+ * Sets the lottery games to their default values, i.e. minimun number of lines per game,  
+ * e.g. the lotto game requires a minimum of 2 lines. Sets the number of members to 1
+ * Make sure the required elements are displayed or not displayed   
  */
 function lotteryGame(lotteryType) {
-
-    // Make sure the required elements are displayed or not displayed
-    document.getElementById("lottery-criteria").style.display = "initial";
-    document.getElementById("pick-num-image").style.display = "initial";
-    document.getElementById("results").style.display = "none";
 
     // Set the generate numbers button text
     document.getElementById("generate").innerText = `Generate ${lotteryType} Numbers`;
 
     // Set the required elements to their default values
     if (lotteryType === "euromillions") {
-        document.getElementById("generate").style.color = '#008000'; // green
         document.getElementById("plus").checked = true;
         document.getElementById("num-lines").value = "1";
         document.getElementById("num-members").value = "1";
     } else if (lotteryType === "lotto") {
-        document.getElementById("generate").style.color = '#FF0000'; // red
         document.getElementById("plus").checked = true;
         document.getElementById("num-lines").value = "2"; // mimimum of 2 lines
         document.getElementById("num-members").value = "1";
     } else if (lotteryType === "dailymillions") {
-        document.getElementById("generate").style.color = '#0000FF'; // blue
         document.getElementById("plus").checked = true;
         document.getElementById("num-lines").value = "1";
         document.getElementById("num-members").value = "1";
@@ -50,6 +43,11 @@ function lotteryGame(lotteryType) {
         alert(`Unknown lottery game type: ${lotteryType}`)
         throw `Unknown lottery game type: ${lotteryType}. Aborting!`;
     }
+
+    // Make sure the required elements are displayed or not displayed
+    document.getElementById("lottery-criteria").style.display = "initial";
+    document.getElementById("pick-num-image").style.display = "initial";
+    document.getElementById("results").style.display = "none";        
 }
 
 /**
@@ -87,6 +85,7 @@ function checkGame() {
 
     // Generte the random lottery numbers
     generateNumbers(chosenGame, totalNumbers, chosenNumbers, luckyStars);
+
 }
 
 /**
@@ -96,14 +95,14 @@ function checkGame() {
  */
 function generateNumbers(chosenGame, totalNumbers, chosenNumbers, luckyStars) {
 
+    // Store the plus option chosen
+    let includePlus = document.getElementById("plus").checked
+
     // Store the number of lines entered
     let numLines = parseInt(document.getElementById("num-lines").value);
 
     // Store the number of members entered
     let numMembers = parseInt(document.getElementById("num-members").value);
-
-    // Store the plus option chosen
-    let includePlus = document.getElementById("plus").checked
 
     // Array of lottery game random numbers
     let randomNumbers = [];
@@ -111,10 +110,10 @@ function generateNumbers(chosenGame, totalNumbers, chosenNumbers, luckyStars) {
     // Array of euromillions lucky stars random numbers
     let luckystarsNumbers = [];
 
-    // Output text of lottery game random numbers header, each line and totals...
+    // Output text of lottery game: the random numbers header title, each line of numbers and totals...
     let htmlResult = ""
 
-    // Check the game chosen
+    // Check the game chosen and define the random numbers header title
     if (chosenGame.includes("EUROMILLIONS")) {
         if (numLines === 1) {
             htmlResult = `<br>(${chosenGame.substr(9)} GENERATED) - ${numLines} line of 5 Numbers (1-50) 2 Lucky Stars (1-12)`;
@@ -143,7 +142,7 @@ function generateNumbers(chosenGame, totalNumbers, chosenNumbers, luckyStars) {
     }
 
     // Loop for the number of lines chosen
-    for (let i = 0; i < numLines; i++) {
+    for (let i = 1; i <= numLines; i++) {
 
         // Reset to empty
         randomNumbers = [];
@@ -188,9 +187,9 @@ function generateNumbers(chosenGame, totalNumbers, chosenNumbers, luckyStars) {
 
         // Lucky stars are only included in the euromillions lottery game
         if (luckyStars) {
-            htmlResult += `Line No.${i+1}:  (${randomNumbers}) Lucky Stars: (${luckystarsNumbers}) <br><br>`;
+            htmlResult += `Line No.${i}:  (${randomNumbers}) Lucky Stars: (${luckystarsNumbers}) <br><br>`;
         } else {
-            htmlResult += `Line No.${i+1}:  (${randomNumbers}) <br><br>`;
+            htmlResult += `Line No.${i}:  (${randomNumbers}) <br><br>`;
         }
     }
 
@@ -230,10 +229,10 @@ function generateNumbers(chosenGame, totalNumbers, chosenNumbers, luckyStars) {
     }
 
     // Set to 2 decimal places
-    totCost = (totCost).toFixed(2);
-    costPerLine = (costPerLine).toFixed(2);
+    totCost = totCost.toFixed(2);
+    costPerLine = costPerLine.toFixed(2);
     costPerMember = totCost / numMembers;
-    costPerMember = parseFloat(costPerMember).toFixed(2);
+    costPerMember = costPerMember.toFixed(2);
 
     // Display the total cost
     htmlResult += `The total cost is €${totCost}  `
