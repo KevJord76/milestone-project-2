@@ -104,7 +104,7 @@ function checkGame() {
         chosenNumbers = 6;
         luckyStars = false;
     } else {
-        alert("Unknown lottery game chosen");
+        alert("Please select a lottery game");
         throw "Unknown lottery game chosen. Aborting!";
     }
 
