@@ -11,9 +11,17 @@ document.addEventListener("DOMContentLoaded", function () {
                 let lotteryType = this.getAttribute("data-type");
                 lotteryGame(lotteryType);
             }
-        })
+        });
     }
-})
+
+    
+
+});
+
+
+
+
+
 
 /**
  * Sets the text of the generate numbers button to the lottery game chosen  
@@ -56,6 +64,23 @@ function lotteryGame(lotteryType) {
  * number of balls to be chosen and are lucky stars included    
  */
 function checkGame() {
+
+    // Default to true
+    let validateNum = true;
+    
+    // Check the number of lines entered by the user
+    validateNum = checkNumLines(); 
+    if (!validateNum) {
+        document.getElementById("num-lines").focus();
+        return;
+    }
+
+    // Check the number of members entered by the user
+    validateNum = checkNumMembers(); 
+    if (!validateNum) {
+        document.getElementById("num-members").focus();
+        return;
+    }
 
     // Store the text of the chosen lottery game
     let chosenGame = document.getElementById("generate").innerText;
@@ -256,5 +281,43 @@ function generateNumbers(chosenGame, totalNumbers, chosenNumbers, luckyStars) {
 
     // Set the results div to the required text
     document.getElementById("results").innerHTML = htmlResult;
+
+}
+
+/**
+ * Check the number of lottery lines entered by the user
+ * It must be between 1 and 6
+ */
+ function checkNumLines() {
+
+    // Store the number of lines entered
+    let num = parseInt(document.getElementById("num-lines").value); 
+    
+    // Check for an invalid number
+    if (num < 1 || num > 6 || Number.isNaN(num)) {
+        alert("Please enter number of lines from 1 to 6");
+        return false;        
+    } else {
+        return true;
+    }
+
+}
+
+/**
+ * Check the number of syndicate members entered by the user
+ * It must be greater than 0 and not empty
+ */
+ function checkNumMembers() {
+
+    // Store the number of members entered
+    let num = parseInt(document.getElementById("num-members").value); 
+    
+    // Check for an invalid number
+    if (num < 1 || Number.isNaN(num)) {
+        alert("Please enter number of members greater than 0");
+        return false;        
+    } else {
+        return true;
+    }
 
 }
