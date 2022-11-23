@@ -290,14 +290,26 @@ function generateNumbers(chosenGame, totalNumbers, chosenNumbers, luckyStars) {
  */
  function checkNumLines() {
 
+    // Store the text of the chosen lottery game
+    let chosenGame = document.getElementById("generate").innerText;
+
     // Store the number of lines entered
     let num = parseInt(document.getElementById("num-lines").value); 
     
     // Check for an invalid number
-    if (num < 1 || num > 6 || Number.isNaN(num)) {
-        alert("Please enter number of lines from 1 to 6");
+    if (num < 2 && chosenGame.includes("LOTTO")) {
+        alert("The Lotto game requires at least 2 lines"); 
         return false;        
-    } else {
+    } else if (num < 1 || num > 6 || Number.isNaN(num)) {
+        if (chosenGame.includes("LOTTO")) {
+            alert("Please enter number of lines from 2 to 6");
+            return false;     
+        } else {
+            alert("Please enter number of lines from 1 to 6");
+            return false;   
+        }         
+    }
+    else {
         return true;
     }
 
