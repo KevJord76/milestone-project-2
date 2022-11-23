@@ -2,7 +2,6 @@
 // Get the button elements and add event listeners to them
 document.addEventListener("DOMContentLoaded", function () {
     let buttons = document.getElementsByTagName("button");
-
     for (let button of buttons) {
         button.addEventListener("click", function () {
             if (this.getAttribute("data-type") === "generate") {
@@ -14,14 +13,19 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    
+    // Get the checkbox element and add an event listeners to it
+    let check = document.getElementById("plus");
+    check.addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+            if (this.checked) {
+                document.getElementById("plus").checked = false;
+            }  else {
+                document.getElementById("plus").checked = true;
+            }        
+            } 
+        });
 
 });
-
-
-
-
-
 
 /**
  * Sets the text of the generate numbers button to the lottery game chosen  
@@ -49,7 +53,7 @@ function lotteryGame(lotteryType) {
         document.getElementById("num-members").value = "1";
     } else {
         alert(`Unknown lottery game type: ${lotteryType}`)
-        throw `Unknown lottery game type: ${lotteryType}. Aborting!`;
+        throw `Unknown lottery game type: ${lotteryType}. Aborting!`;        
     }
 
     // Make sure the required elements are displayed or not displayed
