@@ -109,6 +109,7 @@ function checkGame() {
         luckyStars = false;
     } else {
         alert("Please select a lottery game");
+        document.getElementById("euromillions").focus();
         throw "Unknown lottery game chosen. Aborting!";
     }
 
