@@ -66,9 +66,10 @@ body {
     border-color: green;
 }
 
-/* Euromillions button active, hover styling */
+/* Euromillions button active, hover, focus styling */
 .btn-euromillions:active,
-.btn-euromillions:hover {
+.btn-euromillions:hover,
+.btn-euromillions:focus {
     background-color: darkgreen;
     color: white;
 }
@@ -79,9 +80,10 @@ body {
     border-color: red;
 }
 
-/* Lotto button active, hover styling */
+/* Lotto button active, hover, focus styling */
 .btn-lotto:active,
-.btn-lotto:hover {
+.btn-lotto:hover,
+.btn-lotto:focus {
     background-color: darkred;
     color: white;
 }
@@ -92,9 +94,10 @@ body {
     border-color: blue;
 }
 
-/* Dailymillions button active, hover styling */
+/* Dailymillions button active, hover, focus styling */
 .btn-dailymillions:active,
-.btn-dailymillions:hover {
+.btn-dailymillions:hover,
+.btn-dailymillions:focus {
     background-color: darkblue;
     color: white;
 }
@@ -120,9 +123,10 @@ body {
     color: white;
 }
 
-/* Generate button active, hover styling */
+/* Generate button active, hover, focus styling */
 .btn-generate:active,
-.btn-generate:hover {
+.btn-generate:hover,
+.btn-generate:focus {
     background-color: #0d1013;
 }
 
