@@ -69,23 +69,6 @@ function lotteryGame(lotteryType) {
  */
 function checkGame() {
 
-    // Default to true
-    let validateNum = true;
-    
-    // Check the number of lines entered by the user
-    validateNum = checkNumLines(); 
-    if (!validateNum) {
-        document.getElementById("num-lines").focus();
-        return;
-    }
-
-    // Check the number of members entered by the user
-    validateNum = checkNumMembers(); 
-    if (!validateNum) {
-        document.getElementById("num-members").focus();
-        return;
-    }
-
     // Store the text of the chosen lottery game
     let chosenGame = document.getElementById("generate").innerText;
 
@@ -111,6 +94,23 @@ function checkGame() {
         alert("Please select a lottery game");
         document.getElementById("euromillions").focus();
         throw "Unknown lottery game chosen. Aborting!";
+    }
+
+    // Default to true
+    let validateNum = true;
+    
+    // Check the number of lines entered by the user
+    validateNum = checkNumLines(); 
+    if (!validateNum) {
+        document.getElementById("num-lines").focus();
+        return;
+    }
+
+    // Check the number of members entered by the user
+    validateNum = checkNumMembers(); 
+    if (!validateNum) {
+        document.getElementById("num-members").focus();
+        return;
     }
 
     // Generte the random lottery numbers
@@ -337,4 +337,26 @@ function generateNumbers(chosenGame, totalNumbers, chosenNumbers, luckyStars) {
         return true;
     }
 
+}
+
+/**
+ * Ensure a float number is not entered  
+ * for the number of lottery lines
+ */
+function convertNum() {
+
+    num = Math.floor(document.getElementById("num-lines").value);
+    document.getElementById("num-lines").value = num;   
+
+}
+
+/**
+ * Ensure a float number is not entered  
+ * for the number of members
+ */
+function convertMem() {
+
+    num = Math.floor(document.getElementById("num-members").value);
+    document.getElementById("num-members").value = num;  
+         
 }
