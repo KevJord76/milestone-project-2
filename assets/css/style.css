@@ -166,4 +166,17 @@ footer {
     body {
         font-size: 70%;
     }
+
+    /* Lottery game buttons styling */
+    .btn-game {
+        width: 200px;
+        height: 30px; 
+        font-size: 80%;     
+    }
+
+    /* Results div styling */
+    .results {
+        height: 295px;
+    }
+    
 }
