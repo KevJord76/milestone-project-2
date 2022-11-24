@@ -149,29 +149,29 @@ function generateNumbers(chosenGame, totalNumbers, chosenNumbers, luckyStars) {
     // Check the game chosen and define the random numbers header title
     if (chosenGame.includes("EUROMILLIONS")) {
         if (numLines === 1) {
-            htmlResult = `<br>(${chosenGame.substr(9)} GENERATED) - ${numLines} line of 5 Numbers (1-50) 2 Lucky Stars (1-12)`;
+            htmlResult = `${chosenGame.substr(9)} GENERATED<br> ${numLines} line of 5 Numbers (1-50) 2 Lucky Stars (1-12)`;
         } else {
-            htmlResult = `<br>(${chosenGame.substr(9)} GENERATED) - ${numLines} lines of 5 Numbers (1-50) 2 Lucky Stars (1-12)`;
+            htmlResult = `${chosenGame.substr(9)} GENERATED<br> ${numLines} lines of 5 Numbers (1-50) 2 Lucky Stars (1-12)`;
         }
     } else if (chosenGame.includes("LOTTO")) {
         if (numLines === 1) {
-            htmlResult = `<br>(${chosenGame.substr(9)} GENERATED) - ${numLines} line of 6 Numbers (1-47)`;
+            htmlResult = `${chosenGame.substr(9)} GENERATED<br> ${numLines} line of 6 Numbers (1-47)`;
         } else {
-            htmlResult = `<br>(${chosenGame.substr(9)} GENERATED) - ${numLines} lines of 6 Numbers (1-47)`;
+            htmlResult = `${chosenGame.substr(9)} GENERATED<br> ${numLines} lines of 6 Numbers (1-47)`;
         }
     } else if (chosenGame.includes("DAILYMILLIONS")) {
         if (numLines === 1) {
-            htmlResult = `<br>(${chosenGame.substr(9)} GENERATED) - ${numLines} line of 6 Numbers (1-39)`;
+            htmlResult = `${chosenGame.substr(9)} GENERATED<br> ${numLines} line of 6 Numbers (1-39)`;
         } else {
-            htmlResult = `<br>(${chosenGame.substr(9)} GENERATED) - ${numLines} lines of 6 Numbers (1-39)`;
+            htmlResult = `${chosenGame.substr(9)} GENERATED<br> ${numLines} lines of 6 Numbers (1-39)`;
         }
     }
 
     // Is the lottery game plus option included
     if (includePlus) {
-        htmlResult += " (Plus Included)<br><br>"
+        htmlResult += "<br>(Plus Included)<br><br>"
     } else {
-        htmlResult += " (No Plus Included)<br><br>"
+        htmlResult += "<br>(No Plus Included)<br><br>"
     }
 
     // Loop for the number of lines chosen
