@@ -285,7 +285,7 @@ function generateNumbers(chosenGame, totalNumbers, chosenNumbers, luckyStars) {
     }
 
     // Set the results div to the required text
-    document.getElementById("results").innerHTML = htmlResult;
+    document.getElementById("results").innerHTML = htmlResult;  
 
 }
 

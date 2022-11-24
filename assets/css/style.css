@@ -27,8 +27,7 @@ body {
 /* Logo image class styling */
 .logo {
     height: 50px;
-    width: 50px;
-    float: inline-end;
+    width: 50px;   
 }
 
 /* Pick numbers image class styling */
@@ -36,7 +35,7 @@ body {
     height: 100px;
     width: 100px;
     margin-top: 15px;
-    margin-bottom: 15px;
+    margin-bottom: 15px;   
 }
 
 /* Lottery area styling */
