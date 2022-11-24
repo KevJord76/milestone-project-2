@@ -82,14 +82,17 @@ function checkGame() {
         totalNumbers = 50;
         chosenNumbers = 5;
         luckyStars = true;
+        document.getElementById("results").style.color = "#023020";  // dark green
     } else if (chosenGame.includes("LOTTO")) {
         totalNumbers = 47;
         chosenNumbers = 6;
         luckyStars = false;
+        document.getElementById("results").style.color = "#8B0000"; // dark red
     } else if (chosenGame.includes("DAILYMILLIONS")) {
         totalNumbers = 39;
         chosenNumbers = 6;
         luckyStars = false;
+        document.getElementById("results").style.color = "#00008B"; // dark blue
     } else {
         alert("Please select a lottery game");
         document.getElementById("euromillions").focus();

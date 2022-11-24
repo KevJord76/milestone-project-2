@@ -148,6 +148,7 @@ footer {
     display: none;
     height: 330px;
     font-weight: bolder;
+    font-size: 103%;    
 }
 
 /* For medium screens sizes from 950px wide and down */
@@ -164,7 +165,7 @@ footer {
 
     /* Body text styling, 70% size of original */
     body {
-        font-size: 70%;
+        font-size: 72%;
     }
 
     /* Lottery game buttons styling */
