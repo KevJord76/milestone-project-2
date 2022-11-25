@@ -52,7 +52,7 @@ function lotteryGame(lotteryType) {
         document.getElementById("num-lines").value = "1";
         document.getElementById("num-members").value = "1";
     } else {
-        alert(`Unknown lottery game type: ${lotteryType}`)
+        alert(`Unknown lottery game type: ${lotteryType}`);
         throw `Unknown lottery game type: ${lotteryType}. Aborting!`;
     }
 
@@ -60,12 +60,14 @@ function lotteryGame(lotteryType) {
     document.getElementById("lottery-criteria").style.display = "initial";
     document.getElementById("pick-num-image").style.display = "initial";
     document.getElementById("results").style.display = "none";
+
 }
 
 /**
  * Check which lottery game the user has chosen, then define the 
  * game rules: Total number of lottery balls in the draw, 
- * number of balls to be chosen and are lucky stars included    
+ * number of balls to be chosen and are lucky stars included  
+ * Set the results div colour  
  */
 function checkGame() {
 
@@ -122,6 +124,56 @@ function checkGame() {
 }
 
 /**
+ * Check the number of lottery lines entered by the user
+ * It must be from 1 to 6 for the euromillions/dailymillions games
+ * It must be from 2 and 6 for the lotto game
+ */
+ function checkNumLines() {
+
+    // Store the text of the chosen lottery game
+    let chosenGame = document.getElementById("generate").innerText;
+
+    // Store the number of lines entered
+    let num = parseInt(document.getElementById("num-lines").value);
+
+    // Check for an invalid number
+    if (num < 2 && chosenGame.includes("LOTTO")) {
+        alert("The Lotto game requires at least 2 lines");
+        return false;
+    } else if (num < 1 || num > 6 || Number.isNaN(num)) {
+        if (chosenGame.includes("LOTTO")) {
+            alert("Please enter number of lines from 2 to 6");
+            return false;
+        } else {
+            alert("Please enter number of lines from 1 to 6");
+            return false;
+        }
+    } else {
+        return true;
+    }
+
+}
+
+/**
+ * Check the number of syndicate members entered by the user
+ * It must be greater than 0 and not empty
+ */
+ function checkNumMembers() {
+
+    // Store the number of members entered
+    let num = parseInt(document.getElementById("num-members").value);
+
+    // Check for an invalid number
+    if (num < 1 || Number.isNaN(num)) {
+        alert("Please enter number of members greater than 0");
+        return false;
+    } else {
+        return true;
+    }
+
+}
+
+/**
  * This function generates the random lottery numbers based
  * on the total number of lottery balls in the draw, 
  * number of balls to be chosen and are lucky stars included 
@@ -169,9 +221,9 @@ function generateNumbers(chosenGame, totalNumbers, chosenNumbers, luckyStars) {
 
     // Is the lottery game plus option included
     if (includePlus) {
-        htmlResult += "<br>(Plus Included)<br><br>"
+        htmlResult += "<br>(Plus Included)<br><br>";
     } else {
-        htmlResult += "<br>(No Plus Included)<br><br>"
+        htmlResult += "<br>(No Plus Included)<br><br>";
     }
 
     // Loop for the number of lines chosen
@@ -237,81 +289,10 @@ function generateNumbers(chosenGame, totalNumbers, chosenNumbers, luckyStars) {
 }
 
 /**
- * Check the number of lottery lines entered by the user
- * It must be between 1 and 6
- */
-function checkNumLines() {
-
-    // Store the text of the chosen lottery game
-    let chosenGame = document.getElementById("generate").innerText;
-
-    // Store the number of lines entered
-    let num = parseInt(document.getElementById("num-lines").value);
-
-    // Check for an invalid number
-    if (num < 2 && chosenGame.includes("LOTTO")) {
-        alert("The Lotto game requires at least 2 lines");
-        return false;
-    } else if (num < 1 || num > 6 || Number.isNaN(num)) {
-        if (chosenGame.includes("LOTTO")) {
-            alert("Please enter number of lines from 2 to 6");
-            return false;
-        } else {
-            alert("Please enter number of lines from 1 to 6");
-            return false;
-        }
-    } else {
-        return true;
-    }
-
-}
-
-/**
- * Check the number of syndicate members entered by the user
- * It must be greater than 0 and not empty
- */
-function checkNumMembers() {
-
-    // Store the number of members entered
-    let num = parseInt(document.getElementById("num-members").value);
-
-    // Check for an invalid number
-    if (num < 1 || Number.isNaN(num)) {
-        alert("Please enter number of members greater than 0");
-        return false;
-    } else {
-        return true;
-    }
-
-}
-
-/**
- * Ensure a float number is not entered  
- * for the number of lottery lines
- */
-function convertNum() {
-
-    num = Math.floor(document.getElementById("num-lines").value);
-    document.getElementById("num-lines").value = num;
-
-}
-
-/**
- * Ensure a float number is not entered  
- * for the number of members
- */
-function convertMem() {
-
-    num = Math.floor(document.getElementById("num-members").value);
-    document.getElementById("num-members").value = num;
-
-}
-
-/**
  * Calculate the overall cost of the lottery game
  * and the approximate cost per syndicate member
  */
-function calcCosts(chosenGame, numLines, numMembers, includePlus, htmlResult) {
+ function calcCosts(chosenGame, numLines, numMembers, includePlus, htmlResult) {
 
     // Set the costs to zero
     let totCost = 0
@@ -346,6 +327,8 @@ function calcCosts(chosenGame, numLines, numMembers, includePlus, htmlResult) {
     // Set to 2 decimal places
     totCost = totCost.toFixed(2);
     costPerLine = costPerLine.toFixed(2);
+    
+    // Cost per member
     costPerMember = totCost / numMembers;
     costPerMember = costPerMember.toFixed(2);
 
@@ -359,7 +342,7 @@ function calcCosts(chosenGame, numLines, numMembers, includePlus, htmlResult) {
         htmlResult += `(${numLines} lines @${costPerLine} per line)`
     }
 
-    // Display the cost per member
+    // Add the approximate cost per member
     htmlResult += `<br>The approximate cost per member is €${costPerMember}`
 
     // Check the number of members entered
@@ -369,7 +352,31 @@ function calcCosts(chosenGame, numLines, numMembers, includePlus, htmlResult) {
         htmlResult += ` (${numMembers} members)`
     }
 
-    // Set the results div to the required text
+    // Set the results div to the finished results text
     document.getElementById("results").innerHTML = htmlResult;
+
+}
+
+/**
+ * Ensure a float number is not entered  
+ * for the number of lottery lines
+ */
+function convertNum() {
+
+    // Round down to an integer number 
+    let num = Math.floor(document.getElementById("num-lines").value);
+    document.getElementById("num-lines").value = num;
+
+}
+
+/**
+ * Ensure a float number is not entered  
+ * for the number of members
+ */
+function convertMem() {
+
+    // Round down to an integer number
+    let num = Math.floor(document.getElementById("num-members").value);
+    document.getElementById("num-members").value = num;
 
 }
