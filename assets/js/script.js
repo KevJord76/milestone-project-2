@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Get the checkbox element and add an event listeners to it
     let check = document.getElementById("plus");
+    // Allow the user to check/uncheck the lottery plus check box using the enter key
     check.addEventListener("keypress", function (event) {
         if (event.key === "Enter") {
             if (this.checked) {
@@ -25,7 +26,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Add event listeners to the input boxes to ensure float numbers are not entered
+    /* Add event listeners to the no. of lines/members input boxes 
+    to ensure float numbers are not entered */
     document.getElementById("num-lines").addEventListener("focusout", convertNum);
     document.getElementById("num-members").addEventListener("focusout", convertMem);
 
@@ -35,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
  * Ensure a float number is not entered  
  * for the number of lottery lines
  */
- function convertNum() {
+function convertNum() {
 
     // Round down to an integer number 
     let num = Math.floor(document.getElementById("num-lines").value);
@@ -154,9 +156,9 @@ function checkGame() {
 /**
  * Check the number of lottery lines entered by the user
  * It must be from 1 to 6 for the euromillions/dailymillions games
- * It must be from 2 and 6 for the lotto game
+ * It must be from 2 to 6 for the lotto game
  */
- function checkNumLines() {
+function checkNumLines() {
 
     // Store the text of the chosen lottery game
     let chosenGame = document.getElementById("generate").innerText;
@@ -186,7 +188,7 @@ function checkGame() {
  * Check the number of syndicate members entered by the user
  * It must be greater than 0 and not empty
  */
- function checkNumMembers() {
+function checkNumMembers() {
 
     // Store the number of members entered
     let num = parseInt(document.getElementById("num-members").value);
@@ -209,7 +211,7 @@ function checkGame() {
 function generateNumbers(chosenGame, totalNumbers, chosenNumbers, luckyStars) {
 
     // Store the plus option chosen
-    let includePlus = document.getElementById("plus").checked
+    let includePlus = document.getElementById("plus").checked;
 
     // Store the number of lines entered
     let numLines = parseInt(document.getElementById("num-lines").value);
@@ -223,8 +225,8 @@ function generateNumbers(chosenGame, totalNumbers, chosenNumbers, luckyStars) {
     // Array of euromillions lucky stars random numbers
     let luckystarsNumbers = [];
 
-    // Output text of lottery game: the random numbers header title, each line of numbers and totals...
-    let htmlResult = ""
+    // Output text of lottery game: the random numbers header title, each line of numbers and totals
+    let htmlResult = "";
 
     // Check the game chosen and define the random numbers header title
     if (chosenGame.includes("EUROMILLIONS")) {
@@ -312,7 +314,7 @@ function generateNumbers(chosenGame, totalNumbers, chosenNumbers, luckyStars) {
     document.getElementById("results").style.display = "block";
 
     // Calculate the lottery game costs
-    calcCosts(chosenGame, numLines, numMembers, includePlus, htmlResult);   
+    calcCosts(chosenGame, numLines, numMembers, includePlus, htmlResult);
 
 }
 
@@ -320,64 +322,64 @@ function generateNumbers(chosenGame, totalNumbers, chosenNumbers, luckyStars) {
  * Calculate the overall cost of the lottery game
  * and the approximate cost per syndicate member
  */
- function calcCosts(chosenGame, numLines, numMembers, includePlus, htmlResult) {
+function calcCosts(chosenGame, numLines, numMembers, includePlus, htmlResult) {
 
     // Set the costs to zero
-    let totCost = 0
-    let costPerMember = 0
-    let costPerLine = 0
+    let totCost = 0;
+    let costPerMember = 0;
+    let costPerLine = 0;
 
     // Calculate the total cost
     if (includePlus) {
         if (chosenGame.includes("EUROMILLIONS")) {
             totCost = numLines * 3.50;
-            costPerLine = 3.50
+            costPerLine = 3.50;
         } else if (chosenGame.includes("LOTTO")) {
             totCost = numLines * 3.00;
-            costPerLine = 3.00
+            costPerLine = 3.00;
         } else if (chosenGame.includes("DAILYMILLIONS")) {
             totCost = numLines * 1.50;
-            costPerLine = 1.50
+            costPerLine = 1.50;
         }
     } else {
         if (chosenGame.includes("EUROMILLIONS")) {
             totCost = numLines * 2.50;
-            costPerLine = 2.50
+            costPerLine = 2.50;
         } else if (chosenGame.includes("LOTTO")) {
             totCost = numLines * 2.00;
-            costPerLine = 2.00
+            costPerLine = 2.00;
         } else if (chosenGame.includes("DAILYMILLIONS")) {
             totCost = numLines * 1.00;
-            costPerLine = 1.00
+            costPerLine = 1.00;
         }
     }
 
     // Set to 2 decimal places
     totCost = totCost.toFixed(2);
     costPerLine = costPerLine.toFixed(2);
-    
+
     // Cost per member
     costPerMember = totCost / numMembers;
     costPerMember = costPerMember.toFixed(2);
 
     // Display the total cost
-    htmlResult += `The total cost is €${totCost}  `
+    htmlResult += `The total cost is €${totCost}  `;
 
     // Check the number of lines entered
     if (numLines === 1) {
-        htmlResult += `(${numLines} line @${costPerLine} per line)`
+        htmlResult += `(${numLines} line @${costPerLine} per line)`;
     } else {
-        htmlResult += `(${numLines} lines @${costPerLine} per line)`
+        htmlResult += `(${numLines} lines @${costPerLine} per line)`;
     }
 
     // Add the approximate cost per member
-    htmlResult += `<br>The approximate cost per member is €${costPerMember}`
+    htmlResult += `<br>The approximate cost per member is €${costPerMember}`;
 
     // Check the number of members entered
     if (numMembers === 1) {
-        htmlResult += ` (${numMembers} member)`
+        htmlResult += ` (${numMembers} member)`;
     } else {
-        htmlResult += ` (${numMembers} members)`
+        htmlResult += ` (${numMembers} members)`;
     }
 
     // Set the results div to the finished results text

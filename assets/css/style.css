@@ -115,7 +115,7 @@ body {
     text-align: right;
 }
 
-/* Generate random numbers button styling: default to euromillions colour green */
+/* Generate random numbers button styling */
 .btn-generate {
     background-color: #445361;
     border-color: black;
