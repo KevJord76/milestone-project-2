@@ -1,4 +1,4 @@
-<!--- Website name -->
+<!--- Application name -->
 # Lottery Syndicate (Random Numbers Generator)
 
 <!--- Website overview -->
@@ -7,4 +7,47 @@ Lottery Syndicate (Random Numbers Generator) is a game to allow the player to ge
 <!--- Responsive design image -->
 <p align="center">
   <img src="./assets/images/responsive.jpg"/>  
+</p>
+
+<!--- Outline the features of the application -->
+# Features
+
+The application contains a favicon of a selection of lottery balls. This is displayed in the document tab.
+
+<!--- Favicon image -->
+- __Favicon__
+<p align="center">
+  <img src="./assets/images/favicon.jpg"/>
+</p>
+
+The header displays the name of the application and again the logo of lottery balls. Under this the three lottery game options are outlined on three buttons. Green for Euromillions, Red for Lotto and Blue for Dailymillions.
+
+<!--- Header image -->
+- __Header__
+<p align="center">
+  <img src="./assets/images/header.jpg"/>
+</p>
+
+When one of the game buttons becomes active or is hovered over the colour changes. For example the Lotto game button turns dark red.  
+
+<!--- Active image -->
+- __Active Game__
+<p align="center">
+  <img src="./assets/images/hover.jpg"/>
+</p>
+
+When one of the game buttons is chosen the Generate button text changes to the chosen game, e.g. Generate Lotto Numbers.  
+
+<!--- Generate image -->
+- __Generate Numbers__
+<p align="center">
+  <img src="./assets/images/generate.jpg"/>
+</p>
+
+The page footer displays the rules of the game. 
+
+<!--- Footer image -->
+- __Footer__
+<p align="center">
+  <img src="./assets/images/footer.jpg"/>
 </p>
