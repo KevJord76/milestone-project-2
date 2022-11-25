@@ -25,7 +25,35 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
+    // Add event listeners to the input boxes to ensure float numbers are not entered
+    document.getElementById("num-lines").addEventListener("focusout", convertNum);
+    document.getElementById("num-members").addEventListener("focusout", convertMem);
+
 });
+
+/**
+ * Ensure a float number is not entered  
+ * for the number of lottery lines
+ */
+ function convertNum() {
+
+    // Round down to an integer number 
+    let num = Math.floor(document.getElementById("num-lines").value);
+    document.getElementById("num-lines").value = num;
+
+}
+
+/**
+ * Ensure a float number is not entered  
+ * for the number of members
+ */
+function convertMem() {
+
+    // Round down to an integer number
+    let num = Math.floor(document.getElementById("num-members").value);
+    document.getElementById("num-members").value = num;
+
+}
 
 /**
  * Sets the text of the generate numbers button to the lottery game chosen  
@@ -354,29 +382,5 @@ function generateNumbers(chosenGame, totalNumbers, chosenNumbers, luckyStars) {
 
     // Set the results div to the finished results text
     document.getElementById("results").innerHTML = htmlResult;
-
-}
-
-/**
- * Ensure a float number is not entered  
- * for the number of lottery lines
- */
-function convertNum() {
-
-    // Round down to an integer number 
-    let num = Math.floor(document.getElementById("num-lines").value);
-    document.getElementById("num-lines").value = num;
-
-}
-
-/**
- * Ensure a float number is not entered  
- * for the number of members
- */
-function convertMem() {
-
-    // Round down to an integer number
-    let num = Math.floor(document.getElementById("num-members").value);
-    document.getElementById("num-members").value = num;
 
 }
