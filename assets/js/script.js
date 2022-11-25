@@ -294,10 +294,10 @@ function generateNumbers(chosenGame, totalNumbers, chosenNumbers, luckyStars) {
 
         // Numeric sort function discovered on www.w3schools.com 
         randomNumbers.sort(function (a, b) {
-            return a - b
+            return a - b;
         });
         luckystarsNumbers.sort(function (a, b) {
-            return a - b
+            return a - b;
         });
 
         // Lucky stars are only included in the euromillions lottery game
