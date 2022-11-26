@@ -236,7 +236,7 @@ I would like to say thanks to Chris Quinn, who was my mentor for this project. H
 
 ### Content 
 
-- The numeric sort function that I used to order my lottery games random numbers in the correct order was discovered on [w3Schools](www.w3schools.com)
+- The numeric sort function that I used to order my lottery games random numbers in the correct order was discovered on [w3Schools](https://www.w3schools.com/)
 - The idea to create buttons for the lottery games and their styling was based on Code Institute's Love Maths walkthrough project and modified to suit the needs of this web application [Love Maths](https://code-institute-org.github.io/love-maths/index.html)
 - The favicon that I used was converted from an image to an icon using [Convertio](https://convertio.co/)
 - The font I used for this web application is Nunito Sans. I discovered this font on [Google fonts](https://fonts.google.com)  
