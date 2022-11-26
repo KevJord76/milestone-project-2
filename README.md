@@ -39,7 +39,7 @@ When one of the game buttons gets the focus or is hovered over the colour change
 When one of the game buttons is activated/chosen the generate numbers button text changes to the chosen game, e.g. Generate Lotto Numbers.  
 
 <!--- Generate image -->
-- __Generate Random Numbers__
+- __Generate Game Random Numbers__
 <p align="center">
   <img src="./assets/images/generate.jpg"/>
 </p>
@@ -191,3 +191,40 @@ __Fixed Bugs__
 - A big issue/problem that I encountered was to make sure that my section/div heights and widths worked correctly on the different screen sizes. I had to make adjustments to these settings to get my responsive design to work correctly.
 
 - I didn't want the user to be able to enter float numbers into the number of lines and members input boxes. I tried to use the onblur event, but this wasn't working correctly for me. In the end, I used the focusout event which worked for me. If a float number is entered, it is converted to an integer. 
+
+- When I passed my script file through the JSHint JavaScript Validator I was informed that I was missing semi-colons at the end of some of my lines of code. I amended these errors.
+
+<!--- Outline the deployment procedure -->
+## Deployment
+
+- The site was deployed to GitHub pages. The steps to deploy are as follows: 
+  - In the GitHub repository, navigate to the Settings tab 
+  - From the source section drop-down menu, select the Master/Main Branch
+  - Once the master/main branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment, see below. 
+
+<!--- Deployment image -->
+<p align="center">
+  <img src="./assets/images/deployed.jpg"/>  
+</p>
+
+The live link can be found here - https://kevjord76.github.io/milestone-project-2/
+
+- In GitHub you can also [Clone](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) or [Fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo) a repository
+
+To Clone:
+1. On GitHub.com, navigate to the main page of the repository.
+2. Above the list of files, click Code.
+3. Copy the URL for the repository.
+4. Open Git Bash.
+5. Change the current working directory to the location where you want the cloned directory.
+6. Type git clone, and then paste the URL you copied earlier.
+7. Press Enter to create your local clone.
+
+To Fork:
+1. On GitHub.com, navigate to the octocat/Spoon-Knife repository.
+2. In the top-right corner of the page, click Fork.
+3. Select an owner for the forked repository.
+4. By default, forks are named the same as their parent repositories.
+5. Optionally, add a description of your fork.
+6. Choose whether to copy only the default branch or all branches to the new fork.
+7. Click Create fork.
