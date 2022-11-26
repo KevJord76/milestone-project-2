@@ -158,12 +158,24 @@ footer {
     body {
         font-size: 80%;
     }
+
+    /* Lottery game buttons styling */
+    .btn-game {
+        width: 225px;
+        height: 40px;
+        font-size: 90%;
+    }
+
+    /* Results div styling */
+    .results {
+        height: 305px;
+    }
 }
 
 /* For small screens sizes from 800px wide and down */
 @media screen and (max-width: 800px) {
 
-    /* Body text styling, 70% size of original */
+    /* Body text styling, 72% size of original */
     body {
         font-size: 72%;
     }

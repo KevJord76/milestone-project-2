@@ -1,7 +1,7 @@
-<!--- Application name -->
+<!--- Web application name -->
 # Lottery Syndicate (Random Numbers Generator)
 
-<!--- Application overview -->
+<!--- Web application overview -->
 Lottery Syndicate (Random Numbers Generator) is a game to allow the player to generate random lottery numbers. Many companies, organisations, families and friends have their own lottery syndicates set-up. This game allows those syndicates to create their own set of random numbers. There are three games available: Euromillions, Lotto and Dailymillions. The user selects the game they want to play and whether they want plus included. They then enter the number of lines required and the number of members in the syndicate. Once the generate button is activated, the random numbers are displayed on screen along with the costs involved.
 
 <!--- Responsive design image -->
@@ -9,10 +9,10 @@ Lottery Syndicate (Random Numbers Generator) is a game to allow the player to ge
   <img src="./assets/images/responsive.jpg"/>  
 </p>
 
-<!--- Outline the features of the application -->
+<!--- Outline the features of the web application -->
 # Features
 
-The application contains a favicon of a selection of lottery balls. This is displayed in the document tab.
+The web application contains a favicon of a selection of lottery balls. This is displayed in the document tab.
 
 <!--- Favicon image -->
 - __Favicon__
@@ -20,7 +20,7 @@ The application contains a favicon of a selection of lottery balls. This is disp
   <img src="./assets/images/favicon.jpg"/>
 </p>
 
-The header displays the name of the application and again the logo of lottery balls. Under this the three lottery game options are outlined on three buttons. Green for Euromillions, red for Lotto and blue for Dailymillions. This is where the user chooses the lottery game that they want to play. The user can tab to the game buttons and hit the enter key or click on the game buttons to activate them. 
+The header displays the name of the web application and again the logo of lottery balls. Under this the three lottery game options are outlined on three buttons. Green for Euromillions, red for Lotto and blue for Dailymillions. This is where the user chooses the lottery game that they want to play. The user can tab to the game buttons and hit the enter key or click on the game buttons to activate them. 
 
 <!--- Header image -->
 - __Header__
@@ -30,7 +30,7 @@ The header displays the name of the application and again the logo of lottery ba
 
 When one of the game buttons gets the focus or is hovered over the colour changes. For example the Lotto game button turns dark red.  
 
-<!--- Active image -->
+<!--- Hover image -->
 - __Lotto Game Button__
 <p align="center">
   <img src="./assets/images/hover.jpg"/>
@@ -87,19 +87,19 @@ The page footer displays the rules of the game.
   <img src="./assets/images/footer.jpg"/>
 </p>
 
-<!--- Future Features -->
+<!--- Future features -->
 - __Future Features__
 
-  -   The inclusion of the chosen game's results for the last draw that took place to be displayed on screen 
+  - The inclusion of the chosen game's results for the last draw that took place to be displayed on screen 
   - The inclusion of the chosen game's jackpot for the next draw to be displayed on screen
   - Unlimited number of lines can be entered
 
-<!--- Outline the application validation routines -->
+<!--- Outline the web application validation routines -->
 # Data Entry Validation
 
 The user must select a game before the generate numbers button is chosen. If no game has been chosen the following error message will display on screen. 
 
-<!--- Select Error -->
+<!--- Select error -->
 - __Game Selection Error__
 <p align="center">
   <img src="./assets/images/select-error.jpg"/>
@@ -128,7 +128,7 @@ The user must enter a number of members greater than zero. The following error m
 <!--- Outline my testing -->
 # Testing
 
-- I tested that my application works in different browsers: Microsoft Edge, Google Chrome and Mozilla Firefox, see below. I had to make some adjustments to my screen layout after this testing was completed, as, for example, my header logo did not appear correctly in Firefox.
+- I tested that my web application works in different browsers: Microsoft Edge, Google Chrome and Mozilla Firefox, see below. I had to make some adjustments to my screen layout after this testing was completed, as, for example, my header logo did not appear correctly in Firefox.
 
 <!--- Google Chrome, Microsoft Edge and Mozilla Firefox screenshots -->
 Microsoft Edge
@@ -146,7 +146,7 @@ Mozilla Firefox
   <img src="./assets/images/firefox.jpg"/>
 </p>
 
-- I tested and confirmed that my application is responsive on different screen sizes using Chrome DevTools. I designed my application on a Laptop, therefore my lineups are best suited to that screen size. I would have liked to have done some more testing on smaller and larger screen sizes. I spent a lot of time on my JavaScript validation routines so I had less time then to test my media queries and screen's responsiveness. I did test the application on my mobile phone, and it worked well, see below.
+- I tested and confirmed that my web application is responsive on different screen sizes using Chrome DevTools. I designed my web application on a Laptop, therefore my lineups are best suited to that screen size. I would have liked to have done some more testing on smaller and larger screen sizes. I spent a lot of time on my JavaScript validation routines so I had less time then to test my media queries and screen's responsiveness. I did test the web application on my mobile phone, and it worked well, see below.
 
 Samsung Galaxy A22 5G
 <!--- Phone image -->
@@ -154,7 +154,7 @@ Samsung Galaxy A22 5G
   <img src="./assets/images/samsung.jpg"/>
 </p>
 
-- I tested and confirmed that my application's text is readable and has a good contrast between the background and foreground colours. I have used three main colours for the foreground and background, white, grey and black. I also colour coded the games: green for Euromillions, red for Lotto and blue for Dailymillions. I did this to make the content stand out. I used one main font: Nunito Sans, the reason for this is that this font is a good font to display both text and numbers. I discovered this font on Google fonts.    
+- I tested and confirmed that my web application's text is readable and has a good contrast between the background and foreground colours. I have used three main colours for the foreground and background: white, grey and black. I also colour coded the games: green for Euromillions, red for Lotto and blue for Dailymillions. I did this to make the content stand out. I used one main font: Nunito Sans, the reason for this is that this font is a good font to display both text and numbers. I discovered this font on Google fonts.    
 
 - I confirmed that my validation routines work, I activated the generate numbers button without choosing a game first. The expected alert message to choose a game appeared on screen. I tested the entry of too few, too many and blank game number of lines. The expected alert messages to enter a valid number of lines appeared on screen. I tested the entry of zero, a minus figure and blank syndicate members. The expected alert message to enter a valid number of members appeared on screen. It is not allowed to enter a float number into the number of lines and member input boxes. They are converted to an integer if a float number is entered. I confirmed that this worked.   
 
@@ -184,7 +184,7 @@ __Validator Testing__
 <!--- Outline the bugs found -->
 __Fixed Bugs__
 
-- After I deployed my application in Github the logo image did not display correctly using the Firefox browser. I removed the float CSS style and this fixed the bug.
+- After I deployed my web application in Github the logo image did not display correctly using the Firefox browser. I removed the float CSS style and this fixed the bug.
 
 - I was getting an error when I ran my index.html file through the official W3C validator. I was calling a focusout function within the html file, I moved this function call to my script file and this fixed the error.
 
@@ -209,7 +209,7 @@ __Fixed Bugs__
 
 The live link can be found here - https://kevjord76.github.io/milestone-project-2/
 
-- In GitHub you can also [Clone](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) or [Fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo) a repository
+- In GitHub you can also [Clone](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) or [Fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo) this repository
 
 To Clone:
 1. On GitHub.com, navigate to the main page of the repository.
@@ -236,11 +236,11 @@ I would like to say thanks to Chris Quinn, who was my mentor for this project. H
 
 ### Content 
 
-- The numeric sort function that I used to order my lottery games random numbers in the correct order was discovered on [W3Schools](www.w3schools.com)
-- The idea to create buttons for the lottery games and their styling was based on Code Institute's Love Maths walkthrough project and modified to suit the needs of this application [Love Maths](https://code-institute-org.github.io/love-maths/index.html)
+- The numeric sort function that I used to order my lottery games random numbers in the correct order was discovered on [w3Schools](www.w3schools.com)
+- The idea to create buttons for the lottery games and their styling was based on Code Institute's Love Maths walkthrough project and modified to suit the needs of this web application [Love Maths](https://code-institute-org.github.io/love-maths/index.html)
 - The favicon that I used was converted from an image to an icon using [Convertio](https://convertio.co/)
-- The font I used for this application is Nunito Sans. I discovered this font on [Google fonts](https://fonts.google.com)  
+- The font I used for this web application is Nunito Sans. I discovered this font on [Google fonts](https://fonts.google.com)  
 
 ### Media
 
-- The images used for the logo and lottery section of my application were taken from [Clipartmax](https://www.clipartmax.com) 
+- The images used for the logo and lottery section of my web application were taken from [Clipartmax](https://www.clipartmax.com) 
