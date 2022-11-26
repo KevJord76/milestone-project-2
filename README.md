@@ -20,7 +20,7 @@ The application contains a favicon of a selection of lottery balls. This is disp
   <img src="./assets/images/favicon.jpg"/>
 </p>
 
-The header displays the name of the application and again the logo of lottery balls. Under this the three lottery game options are outlined on three buttons. Green for Euromillions, Red for Lotto and Blue for Dailymillions. This is where the user chooses the lottery game that they want to play. The user can tab to the game buttons and hit the enter key or click on the game buttons to activate them. 
+The header displays the name of the application and again the logo of lottery balls. Under this the three lottery game options are outlined on three buttons. Green for Euromillions, red for Lotto and blue for Dailymillions. This is where the user chooses the lottery game that they want to play. The user can tab to the game buttons and hit the enter key or click on the game buttons to activate them. 
 
 <!--- Header image -->
 - __Header__
@@ -68,7 +68,7 @@ The number of members input box allows the user to enter the number of lottery s
   <img src="./assets/images/num-members.jpg"/>
 </p>
 
-Once the user is happy with their choices entered/chosen they can then activate the generate random numbers button. The random numbers for the chosen game will then be displayed on screen along with the associated costs. Again the results displayed are colour coded for each game, dark Green for Euromillions, dark Red for Lotto and dark Blue for Dailymillions. 
+Once the user is happy with their choices entered/chosen they can then activate the generate random numbers button. The random numbers for the chosen game will then be displayed on screen along with the associated costs. Again the results displayed are colour coded for each game, dark green for Euromillions, dark red for Lotto and dark blue for Dailymillions. 
 
 <!--- Results image -->
 - __Results__
@@ -180,3 +180,14 @@ __Validator Testing__
 <p align="center">
   <img src="./assets/images/lighthouse.jpg"/>
 </p>
+
+<!--- Outline the bugs found -->
+__Fixed Bugs__
+
+- After I deployed my application in Github the logo image did not display correctly using the Firefox browser. I removed the float CSS style and this fixed the bug.
+
+- I was getting an error when I ran my index.html file through the official W3C validator. I was calling a focusout function within the html file, I moved this function call to my script file and this fixed the error.
+
+- A big issue/problem that I encountered was to make sure that my section/div heights and widths worked correctly on the different screen sizes. I had to make adjustments to these settings to get my responsive design to work correctly.
+
+- I didn't want the user to be able to enter float numbers into the number of lines and members input boxes. I tried to use the onblur event, but this wasn't working correctly for me. In the end, I used the focusout event which worked for me. If a float number is entered, it is converted to an integer. 
