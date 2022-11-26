@@ -20,7 +20,7 @@ The application contains a favicon of a selection of lottery balls. This is disp
   <img src="./assets/images/favicon.jpg"/>
 </p>
 
-The header displays the name of the application and again the logo of lottery balls. Under this the three lottery game options are outlined on three buttons. Green for Euromillions, Red for Lotto and Blue for Dailymillions.
+The header displays the name of the application and again the logo of lottery balls. Under this the three lottery game options are outlined on three buttons. Green for Euromillions, Red for Lotto and Blue for Dailymillions. This is where the user chooses the lottery game that they want to play. The user can tab to the game buttons and hit the enter key or click on the game buttons to activate them. 
 
 <!--- Header image -->
 - __Header__
@@ -28,15 +28,15 @@ The header displays the name of the application and again the logo of lottery ba
   <img src="./assets/images/header.jpg"/>
 </p>
 
-When one of the game buttons becomes active or is hovered over the colour changes. For example the Lotto game button turns dark red.  
+When one of the game buttons gets the focus or is hovered over the colour changes. For example the Lotto game button turns dark red.  
 
 <!--- Active image -->
-- __Active Game Button__
+- __Lotto Game Button__
 <p align="center">
   <img src="./assets/images/hover.jpg"/>
 </p>
 
-When one of the game buttons is chosen the generate button text changes to the chosen game, e.g. Generate Lotto Numbers.  
+When one of the game buttons is activated/chosen the generate numbers button text changes to the chosen game, e.g. Generate Lotto Numbers.  
 
 <!--- Generate image -->
 - __Generate Random Numbers__
@@ -44,7 +44,7 @@ When one of the game buttons is chosen the generate button text changes to the c
   <img src="./assets/images/generate.jpg"/>
 </p>
 
-The include plus draws check-box allows the user to choose if they want to include these extra draws in their lottery game selection. The final costs, then reflects their choice. The user can also hit the enter key to toggle their choice between checked and unchecked.   
+The include plus draws check-box allows the user to choose if they want to include the extra plus draws in their lottery game selection. The final costs, then reflects their choice. The user can also hit the enter key to toggle their choice between checked and unchecked.   
 
 <!--- Plus image -->
 - __Lottery Plus Option__
@@ -52,7 +52,7 @@ The include plus draws check-box allows the user to choose if they want to inclu
   <img src="./assets/images/plus.jpg"/>
 </p>
 
-The number of lines input box allows the user to enter the number of lottery lines that they want to create random numbers for. If the user enters six, for example, then six random lines will be produced for the game type chosen. 
+The number of lines input box allows the user to enter the number of lottery lines that they want to create random numbers for. If the user enters 6, for example, then 6 random lines will be produced for the game type chosen. 
 
 <!--- Number of lines image -->
 - __Number of Lines__
@@ -68,7 +68,7 @@ The number of members input box allows the user to enter the number of lottery s
   <img src="./assets/images/num-members.jpg"/>
 </p>
 
-Once the user is happy with their choices entered they can then activate the generate random numbers button. The random numbers for the chosen game will then be displayed on screen along with the associated costs. 
+Once the user is happy with their choices entered/chosen they can then activate the generate random numbers button. The random numbers for the chosen game will then be displayed on screen along with the associated costs. 
 
 <!--- Results image -->
 - __Results__
@@ -86,3 +86,11 @@ The page footer displays the rules of the game.
 <p align="center">
   <img src="./assets/images/footer.jpg"/>
 </p>
+
+<!--- Future Features -->
+- __Future Features__
+
+  -   The inclusion of the chosen game's results for the last draw that took place to be displayed on screen 
+  - The inclusion of the chosen game's jackpot for the next draw to be displayed on screen
+  - Unlimited number of lines can be entered
+
