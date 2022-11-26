@@ -228,3 +228,19 @@ To Fork:
 5. Optionally, add a description of your fork.
 6. Choose whether to copy only the default branch or all branches to the new fork.
 7. Click Create fork.
+
+<!--- List the credits -->
+## Credits 
+
+I would like to say thanks to Chris Quinn, who was my mentor for this project. He provided me with a lot of good advice and pointed me in the right direction when I was going the wrong way.
+
+### Content 
+
+- The numeric sort function that I used to order my lottery games random numbers in the correct order was discovered on [W3Schools](www.w3schools.com)
+- The idea to create buttons for the lottery games and their styling was based on Code Institute's Love Maths walkthrough project and modified to suit the needs of this application [Love Maths](https://code-institute-org.github.io/love-maths/index.html)
+- The favicon that I used was converted from an image to an icon using [Convertio](https://convertio.co/)
+- The font I used for this application is Nunito Sans. I discovered this font on [Google fonts](https://fonts.google.com)  
+
+### Media
+
+- The images used for the logo and lottery section of my application were taken from [Clipartmax](https://www.clipartmax.com) 
