@@ -95,7 +95,7 @@ The page footer displays the rules of the game.
   - Unlimited number of lines can be entered
 
 <!--- Outline the application validation routines -->
-# Validation
+# Data Entry Validation
 
 The user must select a game before the generate numbers button is chosen. If no game has been chosen the following error message will display on screen. 
 
@@ -112,6 +112,7 @@ The user must enter a number of lottery lines greater than zero (at least 2 for 
 <p align="center">
   <img src="./assets/images/lotto-error.jpg"/>
 </p>
+
 <p align="center">
   <img src="./assets/images/num-lines-error.jpg"/>
 </p>
@@ -122,4 +123,60 @@ The user must enter a number of members greater than zero. The following error m
 - __Number of Members Error__
 <p align="center">
   <img src="./assets/images/num-members-error.jpg"/>
+</p>
+
+<!--- Outline my testing -->
+# Testing
+
+- I tested that my application works in different browsers: Microsoft Edge, Google Chrome and Mozilla Firefox, see below. I had to make some adjustments to my screen layout after this testing was completed, as, for example, my header logo did not appear correctly in Firefox.
+
+<!--- Google Chrome, Microsoft Edge and Mozilla Firefox screenshots -->
+Microsoft Edge
+<p align="center">
+  <img src="./assets/images/edge.jpg"/>  
+</p>
+
+Google Chrome
+<p align="center">
+  <img src="./assets/images/chrome.jpg"/>  
+</p>
+
+Mozilla Firefox
+<p align="center">
+  <img src="./assets/images/firefox.jpg"/>
+</p>
+
+- I tested and confirmed that my application is responsive on different screen sizes using Chrome DevTools. I designed my application on a Laptop, therefore my lineups are best suited to that screen size. I would have liked to have done some more testing on smaller and larger screen sizes. I spent a lot of time on my JavaScript validation routines so I had less time then to test my media queries and screen's responsiveness. I did test the application on my mobile phone, and it worked well, see below.
+
+Samsung Galaxy A22 5G
+<!--- Phone image -->
+<p align="center">
+  <img src="./assets/images/samsung.jpg"/>
+</p>
+
+- I tested and confirmed that my application's text is readable and has a good contrast between the background and foreground colours. I have used three main colours for the foreground and background, white, grey and black. I also colour coded the games: green for Euromillions, red for Lotto and blue for Dailymillions. I did this to make the content stand out. I used one main font: Nunito Sans, the reason for this is that this font is a good font to display both text and numbers. I discovered this font on Google fonts.    
+
+- I confirmed that my validation routines work, I activated the generate numbers button without choosing a game first. The expected alert message to choose a game appeared on screen. I tested the entry of too few, too many and blank game number of lines. The expected alert messages to enter a valid number of lines appeared on screen. I tested the entry of zero, a minus figure and blank syndicate members. The expected alert message to enter a valid number of members appeared on screen. It is not allowed to enter a float number into the number of lines and member input boxes. They are converted to an integer if a float number is entered. I confirmed that this worked.   
+
+<!--- Outline the validator testing done -->
+__Validator Testing__
+
+- HTML
+  - No errors were returned when passing index.html through the official [(W3C) validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fkevjord76.github.io%2Fmilestone-project-2%2F)
+- CSS
+  - No errors were returned when passing style.css through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fkevjord76.github.io%2Fmilestone-project-2%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en) 
+- JavaScript
+  - One warning was returned when passing script.js through the JSHint JavaScript Validator
+
+<!--- JSHint image -->
+<p align="center">
+  <img src="./assets/images/jshint.jpg"/>
+</p>
+
+- Accessibility
+  - I confirmed that the colours and font chosen are easy to read and accessible by running it through lighthouse in Chrome DevTools. I do have room for improvement here.
+
+<!--- Lighthouse image -->
+<p align="center">
+  <img src="./assets/images/lighthouse.jpg"/>
 </p>
