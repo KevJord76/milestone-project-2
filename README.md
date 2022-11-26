@@ -68,7 +68,7 @@ The number of members input box allows the user to enter the number of lottery s
   <img src="./assets/images/num-members.jpg"/>
 </p>
 
-Once the user is happy with their choices entered/chosen they can then activate the generate random numbers button. The random numbers for the chosen game will then be displayed on screen along with the associated costs. 
+Once the user is happy with their choices entered/chosen they can then activate the generate random numbers button. The random numbers for the chosen game will then be displayed on screen along with the associated costs. Again the results displayed are colour coded for each game, dark Green for Euromillions, dark Red for Lotto and dark Blue for Dailymillions. 
 
 <!--- Results image -->
 - __Results__
@@ -94,3 +94,32 @@ The page footer displays the rules of the game.
   - The inclusion of the chosen game's jackpot for the next draw to be displayed on screen
   - Unlimited number of lines can be entered
 
+<!--- Outline the application validation routines -->
+# Validation
+
+The user must select a game before the generate numbers button is chosen. If no game has been chosen the following error message will display on screen. 
+
+<!--- Select Error -->
+- __Game Selection Error__
+<p align="center">
+  <img src="./assets/images/select-error.jpg"/>
+</p>
+
+The user must enter a number of lottery lines greater than zero (at least 2 for the Lotto game) and no greater than six. The following error messages will display on screen if this is not the case when the generate numbers button is activated. Focus will return to the number of lines input box after the error message is displayed.  
+
+<!--- Number of lines errors -->
+- __Number of Lines Errors__
+<p align="center">
+  <img src="./assets/images/lotto-error.jpg"/>
+</p>
+<p align="center">
+  <img src="./assets/images/num-lines-error.jpg"/>
+</p>
+
+The user must enter a number of members greater than zero. The following error message will display on screen if this is not the case when the generate numbers button is activated. Focus will return to the number of members input box after the error message is displayed.  
+
+<!--- Number of members error -->
+- __Number of Members Error__
+<p align="center">
+  <img src="./assets/images/num-members-error.jpg"/>
+</p>
