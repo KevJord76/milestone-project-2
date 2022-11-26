@@ -166,7 +166,7 @@ __Validator Testing__
 - CSS
   - No errors were returned when passing style.css through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fkevjord76.github.io%2Fmilestone-project-2%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en) 
 - JavaScript
-  - One warning was returned when passing script.js through the JSHint JavaScript Validator
+  - One warning was returned when passing script.js through the [(JSHint) validator](https://jshint.com/)
 
 <!--- JSHint image -->
 <p align="center">
